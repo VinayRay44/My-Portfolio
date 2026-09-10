@@ -1,0 +1,488 @@
+/* ==========================
+   RESET
+========================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #080808;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    overflow-x: hidden;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+::selection {
+    background: #c8ff00;
+    color: black;
+}
+
+
+/* ==========================
+   NAVBAR
+========================== */
+
+header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar {
+    width: 90%;
+    margin: auto;
+
+    padding: 22px 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    border-bottom: 1px solid #222;
+
+    backdrop-filter: blur(15px);
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: 900;
+}
+
+.logo span {
+    color: #c8ff00;
+}
+
+.nav-links {
+    display: flex;
+    gap: 30px;
+    list-style: none;
+}
+
+.nav-links a {
+    color: #888;
+    font-size: 14px;
+    transition: .3s;
+}
+
+.nav-links a:hover {
+    color: #c8ff00;
+}
+
+.nav-btn {
+    padding: 11px 20px;
+
+    border: 1px solid #c8ff00;
+    border-radius: 50px;
+
+    color: #c8ff00;
+
+    transition: .3s;
+}
+
+.nav-btn:hover {
+    background: #c8ff00;
+    color: #000;
+}
+
+
+/* ==========================
+   HERO
+========================== */
+
+.hero {
+    min-height: 100vh;
+
+    padding: 150px 7% 80px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 50px;
+}
+
+.hero-content {
+    max-width: 800px;
+}
+
+.hello {
+    color: #c8ff00;
+
+    font-size: 13px;
+    letter-spacing: 5px;
+
+    margin-bottom: 25px;
+}
+
+.hero h1 {
+    font-size: clamp(70px, 12vw, 160px);
+
+    line-height: .8;
+
+    letter-spacing: -10px;
+
+    margin-bottom: 35px;
+}
+
+.hero h1 span {
+    color: #c8ff00;
+}
+
+.hero h2 {
+    font-size: 25px;
+    margin-bottom: 20px;
+}
+
+.hero-text {
+    max-width: 550px;
+
+    color: #777;
+
+    font-size: 18px;
+    line-height: 1.7;
+
+    margin-bottom: 35px;
+}
+
+
+/* ==========================
+   BUTTONS
+========================== */
+
+.hero-buttons {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.btn {
+    padding: 15px 27px;
+
+    border-radius: 50px;
+
+    transition: .3s;
+}
+
+.primary {
+    background: #c8ff00;
+    color: #000;
+}
+
+.secondary {
+    border: 1px solid #333;
+    color: #aaa;
+}
+
+.btn:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 20px 40px rgba(200,255,0,.15);
+}
+
+
+/* ==========================
+   HERO CIRCLE
+========================== */
+
+.hero-circle {
+    width: 350px;
+    height: 350px;
+
+    flex-shrink: 0;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle at 30% 30%,
+            #edff9c,
+            #c8ff00 25%,
+            #263000 65%,
+            #080808
+        );
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    animation: floating 5s infinite ease-in-out;
+
+    box-shadow:
+        0 0 80px rgba(200,255,0,.15);
+}
+
+.circle-inner {
+    width: 240px;
+    height: 240px;
+
+    border: 1px solid rgba(255,255,255,.3);
+
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.circle-inner span {
+    font-size: 70px;
+    font-weight: 900;
+}
+
+@keyframes floating {
+
+    0%,100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-25px);
+    }
+
+}
+
+
+/* ==========================
+   MARQUEE
+========================== */
+
+.marquee {
+    width: 105%;
+
+    overflow: hidden;
+
+    background: #c8ff00;
+    color: #000;
+
+    padding: 22px 0;
+
+    transform: rotate(-2deg);
+
+    white-space: nowrap;
+}
+
+.marquee-track {
+    display: inline-flex;
+
+    animation: marquee 15s linear infinite;
+}
+
+.marquee span {
+    font-size: 25px;
+    font-weight: 900;
+
+    margin-right: 45px;
+}
+
+@keyframes marquee {
+
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-50%);
+    }
+
+}
+
+
+/* ==========================
+   SECTIONS
+========================== */
+
+.section {
+    padding: 140px 7%;
+}
+
+.section-small {
+    color: #c8ff00;
+
+    font-size: 12px;
+
+    letter-spacing: 4px;
+
+    margin-bottom: 20px;
+}
+
+.section-title {
+    font-size: clamp(55px, 8vw, 110px);
+
+    line-height: .85;
+
+    letter-spacing: -6px;
+
+    margin-bottom: 70px;
+}
+
+.section-title span {
+    color: #c8ff00;
+}
+
+
+/* ==========================
+   ABOUT
+========================== */
+
+.about-grid {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 80px;
+}
+
+.about-text {
+    color: #888;
+
+    font-size: 20px;
+
+    line-height: 1.8;
+}
+
+.about-text p {
+    margin-bottom: 25px;
+}
+
+.about-text strong {
+    color: white;
+}
+
+.stats {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 20px;
+}
+
+.stat-card {
+    padding: 30px;
+
+    border: 1px solid #222;
+
+    border-radius: 20px;
+
+    transition: .4s;
+}
+
+.stat-card h3 {
+    font-size: 45px;
+
+    margin-bottom: 10px;
+}
+
+.stat-card p {
+    color: #666;
+}
+
+.stat-card:hover {
+    background: #c8ff00;
+
+    color: #000;
+
+    transform: translateY(-10px);
+}
+
+.stat-card:hover p {
+    color: #111;
+}
+
+
+/* ==========================
+   SKILLS
+========================== */
+
+.skills {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 15px;
+}
+
+.skill {
+    padding: 14px 22px;
+
+    border: 1px solid #292929;
+
+    border-radius: 50px;
+
+    color: #888;
+
+    transition: .3s;
+}
+
+.skill:hover {
+    background: #c8ff00;
+
+    border-color: #c8ff00;
+
+    color: #000;
+
+    transform: scale(1.08) rotate(-3deg);
+}
+
+
+/* ==========================
+   PROJECTS
+========================== */
+
+.projects {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 25px;
+}
+
+.project-card {
+    min-height: 450px;
+
+    padding: 30px;
+
+    border: 1px solid #222;
+
+    border-radius: 25px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: space-between;
+
+    position: relative;
+
+    overflow: hidden;
+
+    transition: .4s;
+}
+
+.project-card::before {
+    content: "";
+
+    position: absolute;
+
+    width: 250px;
+    height: 250px;
+
+    right: -120px;
+    bottom: -120px;
+
+    background: #c8ff00;
+
+    filter: blur(100px);
+
+    opacity
